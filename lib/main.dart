@@ -5,7 +5,7 @@ void main() => runApp(BMICalculator());
 class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return InputPage();
+    return MaterialApp(home: InputPage());
   }
 }
 
@@ -19,13 +19,12 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bmi Calculator ⚖🏋️‍♀️🏋️‍♂️'),
+        title: Text('Bmi Calculator 🏋️‍♀️🏋️‍♂️'),
       ),
       body: Center(
         child: Text('Our Body'),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {},
         child: Icon(Icons.add),
       ),
     );
