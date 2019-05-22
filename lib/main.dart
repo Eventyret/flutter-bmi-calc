@@ -5,7 +5,9 @@ void main() => runApp(BMICalculator());
 class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: InputPage());
+    return MaterialApp(
+      home: InputPage(),
+    );
   }
 }
 
@@ -25,6 +27,7 @@ class _InputPageState extends State<InputPage> {
         child: Text('Our Body'),
       ),
       floatingActionButton: FloatingActionButton(
+        onPressed: () => {},
         child: Icon(Icons.add),
       ),
     );
