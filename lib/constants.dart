@@ -8,3 +8,10 @@ const kLabelTextStyle = TextStyle(
   fontSize: 18.0,
   color: Color(0xFF5A5A6B),
 );
+
+const kNumberTextStyle = TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.w900,
+);
+const kMinHeight = 120;
+const kMaxHeight = 280;

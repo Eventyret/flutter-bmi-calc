@@ -5,7 +5,6 @@ import 'icon_content.dart';
 import 'resuable_card.dart';
 import 'constants.dart';
 
-
 enum Gender { male, female }
 
 class InputPage extends StatefulWidget {
@@ -15,6 +14,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
+  int height = 180;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +23,7 @@ class _InputPageState extends State<InputPage> {
           title: Center(child: Text('Bmi Calculator ⚡'.toUpperCase())),
         ),
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Expanded(
                 child: Row(
@@ -65,7 +66,40 @@ class _InputPageState extends State<InputPage> {
               child: ReuseableCard(
                 color: kBctiveCardColor,
                 cardChild: Column(
-                  children: <Widget>[Text('Height'.toUpperCase())],
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'Height'.toUpperCase(),
+                      style: kLabelTextStyle,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: <Widget>[
+                        Text(
+                          height.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Text(
+                          'cm',
+                          style: kLabelTextStyle,
+                        ),
+                      ],
+                    ),
+                    Slider(
+                      value: height.toDouble(),
+                      min: kMinHeight.toDouble(),
+                      max: kMaxHeight.toDouble(),
+                      activeColor: Color(0xFFEB1555),
+                      inactiveColor: Color(0xFF8D8E98),
+                      onChanged: (double newValue) {
+                        setState(() {
+                          height = newValue.round();
+                        });
+                      },
+                    ),
+                  ],
                 ),
               ),
             ),
