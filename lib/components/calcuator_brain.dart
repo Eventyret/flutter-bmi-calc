@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart';
+
 class CalculatorBrain {
   CalculatorBrain({this.height, this.weight});
   final int height;
@@ -37,13 +39,35 @@ class CalculatorBrain {
     }
   }
 
-  String getInterpratation() {
+  String getInterpretation() {
     if (_bmi >= 25) {
       return 'You have a higher than normal body weight. Try exercise more. 🏃‍♂️💨';
     } else if (_bmi >= 18.5) {
       return 'You have a normal body weight. Good Job! 👍';
     } else {
       return 'You have a lower then normal body weight. You can eat a bit more 🥗';
+    }
+  }
+
+  TextStyle getColor() {
+    if (_bmi >= 25) {
+      return TextStyle(
+        color: Colors.red,
+        fontSize: 22.0,
+        fontWeight: FontWeight.bold,
+      );
+    } else if (_bmi >= 18.5) {
+      return TextStyle(
+        color: Colors.green,
+        fontSize: 22.0,
+        fontWeight: FontWeight.bold,
+      );
+    } else {
+      return TextStyle(
+        color: Colors.orange,
+        fontSize: 22.0,
+        fontWeight: FontWeight.bold,
+      );
     }
   }
 }
