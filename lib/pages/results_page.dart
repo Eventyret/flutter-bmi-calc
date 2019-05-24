@@ -1,6 +1,7 @@
-import 'package:bmi_calculator/constants.dart';
-import 'package:bmi_calculator/resuable_card.dart';
+import 'package:bmi_calculator/components/bottom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:bmi_calculator/constants.dart';
+import '../components/resuable_card.dart';
 
 class ResultsPage extends StatelessWidget {
   @override
@@ -40,11 +41,17 @@ class ResultsPage extends StatelessWidget {
                     'Your BMI Results are quite low, you should eat more!',
                     style: kBodyTextStyle,
                     textAlign: TextAlign.center,
-                  )
+                  ),
                 ],
               ),
             ),
-          )
+          ),
+          BottomButton(
+            buttonTitle: 'Re-calculate',
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
         ],
       ),
     );
