@@ -14,4 +14,6 @@ const kNumberTextStyle = TextStyle(
   fontWeight: FontWeight.w900,
 );
 const kMinHeight = 120;
-const kMaxHeight = 280;
+const kMaxHeight = 220;
+const kLargeButtonTextStyle =
+    TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold);
