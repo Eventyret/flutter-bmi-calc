@@ -16,10 +16,12 @@ class ResultsPage extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Container(
+                padding: EdgeInsets.all(15.0),
+                alignment: Alignment.bottomLeft,
                 child: Text(
-              'Your Results',
-              style: kTitleTextStyle,
-            )),
+                  'Your Results',
+                  style: kTitleTextStyle,
+                )),
           ),
           Expanded(
             flex: 5,
